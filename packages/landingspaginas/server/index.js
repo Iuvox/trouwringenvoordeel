@@ -14,7 +14,7 @@ async function createServer(
     const resolve = (p) => path.resolve(__dirname, p)
 
     const indexProd = isProd ?
-        fs.readFileSync(resolve('../dist/static/index.html'), 'utf-8') :
+        fs.readFileSync(resolve('../dist/client/index.html'), 'utf-8') :
         ''
 
     const manifest = isProd ?

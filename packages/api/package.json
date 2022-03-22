@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "yarn nodemon server",
-    "serve": "yarn cross-env NODE_ENV=production node server"
+    "serve": "yarn cross-env NODE_ENV=production node server",
+    "start": "yarn node server.js"
   },
   "author": "",
   "license": "ISC",

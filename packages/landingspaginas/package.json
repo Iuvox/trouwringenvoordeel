@@ -12,7 +12,8 @@
     "generate": "yarn vite build --ssrManifest --outDir dist/static && yarn run build:server && yarn node ./server/prerender.js",
     "serve": "yarn cross-env NODE_ENV=production node server",
     "debug": "yarn node --inspect-brk server",
-    "prerender-dev": "yarn node prerender-dev.js"
+    "prerender-dev": "yarn node prerender-dev.js",
+    "start": "yarn run build && yarn run generate && yarn node server"
   },
   "dependencies": {
     "@vueuse/core": "^8.0.1",
