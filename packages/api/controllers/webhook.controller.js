@@ -11,6 +11,7 @@ module.exports.handleOrder = async(req, res) => {
             error: err
         })
     })
+    logger.info(`New order: ${JSON.stringify(req.body)}`)
     const order = await ccvapi.get(`/orders/${req.body.id}`).catch(err => { logger.warn(err); res.status(502).end()})
 
     const codeObj = {
@@ -80,11 +81,13 @@ module.exports.createWebhookCCV = (req, res) => {
         ...req.body,
         is_active: true
     }).then(result => {
-        res.send(result)
+        res.send(result.data)
         logger.debug('Added Webhook')
     }).catch(err => {
         logger.warn('Added Webhook failed')
-        res.status(500).send(err.data)
+        logger.debug(err)
+        console.log(err)
+        res.status(500).send(err)
     })
 }
 
@@ -97,6 +100,7 @@ module.exports.updateWebhookCCV = (req, res) => {
         logger.debug('Updated Webhook')
     }).catch(err => {
         logger.warn('Update Webhook failed')
-        res.status(500).send(err.data)
+        logger.debug(err)
+        res.status(500).send(err)
     })
 }
