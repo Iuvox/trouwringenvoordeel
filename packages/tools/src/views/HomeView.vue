@@ -7,7 +7,7 @@
 <template>
     <div class="px-40 py-10">
         <ul class="list-disc"> 
-            <li><router-link to="/referral">Ga naar referrals tool ></router-link></li>
+            <li><router-link :to="{name: 'Referral'}">Ga naar referrals tool ></router-link></li>
             <li><router-link to="/webhooks">Check alle webhooks ></router-link></li>
         </ul>
     </div>

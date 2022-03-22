@@ -14,3 +14,11 @@ services:
     entrypoint: ['yarn', '--cwd', './packages/landingspaginas', 'run', 'start']
     environment:
       - NODE_ENV=production
+  tools:
+    image: tvoordeel
+    restart: unless-stopped
+    ports:
+      - "${TOOLS_PORT}:3000"
+    entrypoint: ['yarn', '--cwd', './packages/tools', 'run', 'start']
+    environment:
+      - NODE_ENV=production

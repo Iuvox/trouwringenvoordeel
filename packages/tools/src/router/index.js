@@ -29,7 +29,7 @@ const router = createRouter({
             import ('/src/views/LoginView.vue')
         }
     ],
-    history: createWebHistory()
+    history: createWebHistory('/tools')
 })
 
 router.beforeEach((to, from) => {

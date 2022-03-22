@@ -4,8 +4,6 @@ const express = require('express')
 
 const isTest = process.env.NODE_ENV === 'test' || !!process.env.VITE_TEST_BUILD
 
-fs.writeFileSync('./log.log', 'hi')
-
 async function createServer(
     root = process.cwd(),
     isProd = process.env.NODE_ENV === 'production'
