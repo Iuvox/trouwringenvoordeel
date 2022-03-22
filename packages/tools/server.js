@@ -8,9 +8,6 @@ const resolve = (p) => path.resolve(__dirname, p)
 
 const isProd = (process.env.NODE_ENV === 'production')
 
-const manifest = isProd ?
-    require('../dist/static/ssr-manifest.json') : {}
-
 const app = express()
 app.use(require('compression')())
 
