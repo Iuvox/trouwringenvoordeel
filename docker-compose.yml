@@ -3,22 +3,29 @@ services:
   api:
     image: tvoordeel
     restart: unless-stopped
-    ports:
-      - "${API_PORT}:8080"
+    container_name: tvoordeel_api
     entrypoint: ['yarn', '--cwd', './packages/api', 'run', 'start']
+    environment:
+      - NODE_ENV=production
   landingspagina:
     image: tvoordeel
     restart: unless-stopped
-    ports:
-      - "${LANDINGSPAGINA_PORT}:3000"
+    container_name: tvoordeel_landingspagina
     entrypoint: ['yarn', '--cwd', './packages/landingspaginas', 'run', 'start']
     environment:
       - NODE_ENV=production
   tools:
     image: tvoordeel
     restart: unless-stopped
-    ports:
-      - "${TOOLS_PORT}:3000"
+    container_name: tvoordeel_tools
     entrypoint: ['yarn', '--cwd', './packages/tools', 'run', 'start']
     environment:
       - NODE_ENV=production
+  nginx:
+    image: nginx:latest
+    container_name: tvoordeel_webserver
+    restart: unless-stopped
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 3002:80
