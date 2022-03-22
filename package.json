@@ -2,7 +2,14 @@
   "name": "trouwringenvoordeel",
   "packageManager": "yarn@3.2.0",
   "private": true,
+  "scripts": {
+    "dev": "node server"
+  },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3"
+  }
 }

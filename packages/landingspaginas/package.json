@@ -3,16 +3,16 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "nodemon server",
-    "build": "npm run build:client && npm run build:server",
-    "build:noExternal": "npm run build:client && npm run build:server:noExternal",
-    "build:client": "vite build --ssrManifest --outDir dist/client",
-    "build:server": "vite build --ssr src/entry-server.js --outDir dist/server",
-    "build:server:noExternal": "vite build --config vite.config.noexternal.js --ssr src/entry-server.js --outDir dist/server",
-    "generate": "vite build --ssrManifest --outDir dist/static && npm run build:server && node prerender",
-    "serve": "cross-env NODE_ENV=production node server",
-    "debug": "node --inspect-brk server",
-    "prerender-dev": "node prerender-dev.js"
+    "dev": "yarn nodemon server",
+    "build": "yarn run build:client && yarn run build:server",
+    "build:noExternal": "yarn run build:client && yarn run build:server:noExternal",
+    "build:client": "yarn vite build --ssrManifest --outDir dist/client",
+    "build:server": "yarn vite build --ssr src/entry-server.js --outDir dist/server",
+    "build:server:noExternal": "yarn vite build --config vite.config.noexternal.js --ssr src/entry-server.js --outDir dist/server",
+    "generate": "yarn vite build --ssrManifest --outDir dist/static && yarn run build:server && yarn node ./server/prerender.js",
+    "serve": "yarn cross-env NODE_ENV=production node server",
+    "debug": "yarn node --inspect-brk server",
+    "prerender-dev": "yarn node prerender-dev.js"
   },
   "dependencies": {
     "@vueuse/core": "^8.0.1",

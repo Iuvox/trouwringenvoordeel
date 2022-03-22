@@ -4,6 +4,8 @@ const express = require('express')
 
 const isTest = process.env.NODE_ENV === 'test' || !!process.env.VITE_TEST_BUILD
 
+fs.writeFileSync('./log.log', 'hi')
+
 async function createServer(
     root = process.cwd(),
     isProd = process.env.NODE_ENV === 'production'
@@ -12,16 +14,17 @@ async function createServer(
     const resolve = (p) => path.resolve(__dirname, p)
 
     const indexProd = isProd ?
-        fs.readFileSync(resolve('../dist/client/index.html'), 'utf-8') :
+        fs.readFileSync(resolve('../dist/static/index.html'), 'utf-8') :
         ''
 
     const manifest = isProd ?
-        require('../dist/client/ssr-manifest.json') : {}
+        require('../dist/static/ssr-manifest.json') : {}
 
     const app = express()
 
 
     let vite
+
     if (!isProd) {
         vite = await require('vite').createServer({
                 root,

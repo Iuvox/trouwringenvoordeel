@@ -2836,7 +2836,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pinia@npm:^2.0.12":
+"pinia@npm:^2.0.11, pinia@npm:^2.0.12":
   version: 2.0.12
   resolution: "pinia@npm:2.0.12"
   dependencies:
@@ -3478,7 +3478,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^3.0.23":
+"tailwindcss@npm:^3.0.22, tailwindcss@npm:^3.0.23":
   version: 3.0.23
   resolution: "tailwindcss@npm:3.0.23"
   dependencies:
@@ -3567,6 +3567,16 @@ __metadata:
 "tools@workspace:packages/tools":
   version: 0.0.0-use.local
   resolution: "tools@workspace:packages/tools"
+  dependencies:
+    "@vitejs/plugin-vue": ^2.2.0
+    autoprefixer: ^10.4.2
+    axios: ^0.26.0
+    pinia: ^2.0.11
+    postcss: ^8.4.6
+    tailwindcss: ^3.0.22
+    vite: ^2.8.0
+    vue: ^3.2.25
+    vue-router: ^4.0.12
   languageName: unknown
   linkType: soft
 
@@ -3591,6 +3601,9 @@ __metadata:
 "trouwringenvoordeel@workspace:.":
   version: 0.0.0-use.local
   resolution: "trouwringenvoordeel@workspace:."
+  dependencies:
+    dotenv: ^16.0.0
+    express: ^4.17.3
   languageName: unknown
   linkType: soft
 
@@ -3781,7 +3794,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-router@npm:^4.0.14":
+"vue-router@npm:^4.0.12, vue-router@npm:^4.0.14":
   version: 4.0.14
   resolution: "vue-router@npm:4.0.14"
   dependencies:

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server",
-    "serve": "cross-env NODE_ENV=production nodemon server"
+    "dev": "yarn nodemon server",
+    "serve": "yarn cross-env NODE_ENV=production node server"
   },
   "author": "",
   "license": "ISC",

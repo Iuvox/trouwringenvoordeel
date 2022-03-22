@@ -161,36 +161,36 @@
                 <h5 class="font-bold text-lg text-primary mt-2">Klantenservice</h5>
                 <ul>
                     <li>
-                        <a href="/">Home</a>
+                        <a target="_blank" href="https://trouwringenvoordeel.nl/">Home</a>
                     </li>
                     <li>
-                        <a href="/klantenservice">Klantenservice</a>
+                        <a target="_blank" href="https://trouwringenvoordeel.nl/klantenservice">Klantenservice</a>
                     </li>
                     <li>
-                        <a href="/algemene-voorwaarden">Algemene voorwaarden</a>
+                        <a target="_blank" href="https://trouwringenvoordeel.nl/algemene-voorwaarden">Algemene voorwaarden</a>
                     </li>
                     <li>
-                        <a href="/contact-trouwringenvoordeel">Contact</a>
+                        <a target="_blank" href="https://trouwringenvoordeel.nl/contact-trouwringenvoordeel">Contact</a>
                     </li>
                     <li>
-                        <a href="/Blog">Blog trouwringen</a>
+                        <a target="_blank" href="https://trouwringenvoordeel.nl/Blog">Blog trouwringen</a>
                     </li>
                     <li>
-                        <a href="/Ringmaat_Ringen_Online_Kopen">FAQ</a>
+                        <a target="_blank" href="https://trouwringenvoordeel.nl/Ringmaat_Ringen_Online_Kopen">FAQ</a>
                     </li>
                     <li>
-                        <a href="/Ringmaten_trouwringen">Ringmaten trouwringen</a>
+                        <a target="_blank" href="https://trouwringenvoordeel.nl/Ringmaten_trouwringen">Ringmaten trouwringen</a>
                     </li>
                     <li>
-                        <a href="/Over-ons">Over ons</a>
+                        <a target="_blank" href="https://trouwringenvoordeel.nl/Over-ons">Over ons</a>
                     </li>
                     <li>
                         <a
-                            href="/website/index.php?Show=WebShopUserLogin&amp;First=true"
+                            target="_blank" href="https://trouwringenvoordeel.nl/website/index.php?Show=WebShopUserLogin&amp;First=true"
                         >Account gegevens</a>
                     </li>
                     <li>
-                        <a href="/formulier">Online Afspraken Maken</a>
+                        <a target="_blank" href="https://trouwringenvoordeel.nl/formulier">Online Afspraken Maken</a>
                     </li>
                 </ul>
             </div>
@@ -198,34 +198,34 @@
                 <h5 class="font-bold text-lg text-primary mt-2">Klantenservice</h5>
                 <ul>
                     <li>
-                        <a href="/vestigingen-trouwringen">Vestigingen</a>
+                        <a target="_blank" href="https://trouwringenvoordeel.nl/vestigingen-trouwringen">Vestigingen</a>
                     </li>
                     <li>
-                        <a href="/Trouwringen">Trouwringen</a>
+                        <a target="_blank" href="https://trouwringenvoordeel.nl/Trouwringen">Trouwringen</a>
                     </li>
                     <li>
-                        <a href="/Top-10 trouwringen">Top 10 trouwringen</a>
+                        <a target="_blank" href="https://trouwringenvoordeel.nl/Top-10 trouwringen">Top 10 trouwringen</a>
                     </li>
                     <li>
-                        <a href="/actie-trouwringen">Actie Trouwringen</a>
+                        <a target="_blank" href="https://trouwringenvoordeel.nl/actie-trouwringen">Actie Trouwringen</a>
                     </li>
                     <li>
-                        <a href="/Vriendschapsringen">Vriendschapsringen</a>
+                        <a target="_blank" href="https://trouwringenvoordeel.nl/Vriendschapsringen">Vriendschapsringen</a>
                     </li>
                     <li>
-                        <a href="/verlovingsringen-solitaire-ringen">Verlovingsringen</a>
+                        <a target="_blank" href="https://trouwringenvoordeel.nl/verlovingsringen-solitaire-ringen">Verlovingsringen</a>
                     </li>
                     <li>
-                        <a href="/dummy-ringen">Gratis Dummy Ringen en Ringenbos</a>
+                        <a target="_blank" href="https://trouwringenvoordeel.nl/dummy-ringen">Gratis Dummy Ringen en Ringenbos</a>
                     </li>
                     <li>
-                        <a href="/bruidssieraden">Bruidssieraden * NIEUW*</a>
+                        <a target="_blank" href="https://trouwringenvoordeel.nl/bruidssieraden">Bruidssieraden * NIEUW*</a>
                     </li>
                     <li>
-                        <a href="/nieuwe-trouwringen">Ringen***Nieuw***</a>
+                        <a target="_blank" href="https://trouwringenvoordeel.nl/nieuwe-trouwringen">Ringen***Nieuw***</a>
                     </li>
                     <li>
-                        <a href="/Ontwerp-je-Eigen-Trouwring">Ontwerp je Eigen Trouwring</a>
+                        <a target="_blank" href="https://trouwringenvoordeel.nl/Ontwerp-je-Eigen-Trouwring">Ontwerp je Eigen Trouwring</a>
                     </li>
                 </ul>
             </div>
