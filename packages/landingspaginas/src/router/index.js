@@ -5,7 +5,8 @@ const components = {
     home: () =>
         import ('/src/views/HomeView.vue'),
     winactie: () =>
-        import ('/src/views/WinactieView.vue')
+        import ('/src/views/WinactieView.vue'),
+    winactiesucces: () => import('/src/views/Winactie-Succes.vue')
 }
 
 const routes = [{
@@ -17,6 +18,11 @@ const routes = [{
         path: '/shoptegoedwinnen',
         name: 'Win Shoptegoed',
         component: components.winactie
+    },
+    {
+        path: '/shoptegoedwinnen-succes',
+        name: 'Winactie Succes',
+        component: components.winactiesucces
     }
 ]
 
@@ -40,6 +46,10 @@ const createRouter = () => {
 
 const routerBeforeEach = async(to, from) => {}
 
-const routerAfterEach = (to, from) => {}
+const routerAfterEach = (to, from) => {
+    if(!import.meta.env.SSR) {
+        fbq('track', 'PageView');
+    }
+}
 
 export { createRouter, routerBeforeEach, routerAfterEach, components, routes }

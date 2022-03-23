@@ -1,5 +1,6 @@
 const referral = require('../models/referral.model')
 const ccv = require('../models/ccv.model')
+const logger = require('../config/logging')
 
 module.exports.list = (req, res) => {
 
@@ -9,19 +10,17 @@ module.exports.list = (req, res) => {
         if (result.length === 0) {
             message.error = 'NOT_FOUND'
         }
-        const order = await ccv.findOrder(result[0].order_number).catch(err => { console.log(err) })
-
-
-
+        const order = await ccv.findOrder(result[0].order_number).catch(err => { console.log(err.data) })
+        
         ccv.usedCodes(message.code).then(usedOrders => {
-
+            
             res.send({
                 ...message,
                 ...result[0],
                 usedOrders: usedOrders,
                 order: order.data
             })
-        })
+        }).catch(err => res.send(err) )
 
     })
 

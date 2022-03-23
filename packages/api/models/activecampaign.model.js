@@ -23,3 +23,8 @@ module.exports.setCode = (email, codeObj = {code: String, usedReference: String}
         }
     })
 }
+
+module.exports.createContact = (obj) => {
+    return active.post('/api/3/contact/sync', obj)
+
+}

@@ -20,8 +20,9 @@ module.exports.findusedReferral = (code) => {
 
 module.exports.createCode = (obj) => {
     const code = (Math.round(Date.now())).toString(36)
+    console.log(obj)
     const insert = {
-        order_number: obj.ordernumber_full,
+        order_number: obj.id,
         code: code,
         email: obj.customer_email
     }

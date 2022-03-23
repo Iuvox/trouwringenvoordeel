@@ -11,7 +11,10 @@ module.exports.usedCodes = (code = String) => {
     return new Promise( (resolve, reject) => {
         findusedReferral(code).then(referrals => {
             if (referrals.length === 0) {
-                return reject('not long enough')
+                return resolve({
+                    error: false,
+                    data: 'No order used this referral'
+                })
             }
             const orders = []
             for (let i = 0; i < referrals.length; i++) {

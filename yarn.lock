@@ -549,7 +549,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^0.26.0":
+"axios@npm:^0.26.0, axios@npm:^0.26.1":
   version: 0.26.1
   resolution: "axios@npm:0.26.1"
   dependencies:
@@ -3610,6 +3610,7 @@ __metadata:
     "@vueuse/core": ^8.0.1
     "@vueuse/head": ^0.7.5
     autoprefixer: ^10.4.2
+    axios: ^0.26.1
     compression: ^1.7.4
     cross-env: ^7.0.3
     express: ^4.17.3

@@ -23,6 +23,8 @@ router.use('/webhook', require('./routes/webhook.route'))
 
 router.use('/test', require('./routes/test.route'))
 
+router.use('/activecampaign', require('./routes/activecampaign.route'))
+
 //Everything after this is protected
 const protected = require('./controllers/auth.controller').isLoggedin
 
@@ -30,7 +32,6 @@ router.use('*', protected)
 
 
 router.use('/referral' , require('./routes/referral.route'))
-
 
 const port = process.env.PORT || 8080
 
