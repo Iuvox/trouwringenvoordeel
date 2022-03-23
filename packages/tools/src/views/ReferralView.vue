@@ -29,12 +29,18 @@
             </div>
             <div>
                 <h2 class="text-3xl font-bold mt-6">Gebruikt op de volgende orders:</h2>
-                <div v-for="order in usedOrders" class="mt-3">
-                    <p>Naam: {{ order.customer.billingaddress.full_name }}</p>
-                    <p>Telefoon: {{ order.customer.billingaddress.telephone }}</p>
-                    <p>Email: {{ order.customer.email }}</p>
-                    <p>Order Number: {{ order.ordernumber_full }}</p>
-                    <a :href="`https://www.trouwringenvoordeel.nl/onderhoud/AdminItems/MyOrders/ShowOrder.php?AdminItem=251&Order=${order.id}`" target="_blank" class="underline font-bold">Ga naar order</a>
+                <div v-if="order.Usedorders">
+                    <div v-for="order in usedOrders" class="mt-3">
+                        <p>Naam: {{ order.customer.billingaddress.full_name }}</p>
+                        <p>Telefoon: {{ order.customer.billingaddress.telephone }}</p>
+                        <p>Email: {{ order.customer.email }}</p>
+                        <p>Order Number: {{ order.ordernumber_full }}</p>
+                        <a
+                            :href="`https://www.trouwringenvoordeel.nl/onderhoud/AdminItems/MyOrders/ShowOrder.php?AdminItem=251&Order=${order.id}`"
+                            target="_blank"
+                            class="underline font-bold"
+                        >Ga naar order</a>
+                    </div>
                 </div>
             </div>
         </div>
