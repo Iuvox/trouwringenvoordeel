@@ -77,10 +77,16 @@ export default {
                             label: "Trouwringen"
                         },
                         {
-                            id: "verlovingsringen",
+                            id: "aanzoeksringen",
                             type: "checkbox",
                             checked: false,
-                            label: "Verlovingsringen"
+                            label: "Aanzoeksringen"
+                        },
+                        {
+                            id: "vriendschapsringen",
+                            type: "checkbox",
+                            checked: false,
+                            label: "Vriendschapsringen"
                         },
                     ]
                 },
