@@ -13,6 +13,7 @@
   "dependencies": {
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
+    "vue": "^3.2.31",
     "yarn": "^1.22.18"
   }
 }

@@ -11,7 +11,7 @@
                     <TheHeaderItem v-for="menu in menus">{{menu.name}}</TheHeaderItem>
                 </nav>
             </div>
-            <a href="#">
+            <a href="https://trouwringenvoordeel.nl/?utm_source=iuvox_landingspagina&utm_content=header">
                 <img
                     class="h-10"
                     src="https://www.trouwringenvoordeel.nl/Files/10/258000/258892/Protom/3028733/Media/trouwringenvoordeel-logo.png"
@@ -23,18 +23,18 @@
             </div>
             <div class="flex grow gap-5 justify-end">
                 <a
-                    href="https://www.trouwringenvoordeel.nl/website/index.php?Show=WebShopUserLogin"
+                    href="https://www.trouwringenvoordeel.nl/website/index.php?Show=WebShopUserLogin&utm_source=iuvox_landingspagina&utm_content=header"
                     class="md:flex"
                 >
                     <User />
                     <span class="hidden md:block">Account</span>
                 </a>
                 <a
-                    href="https://www.trouwringenvoordeel.nl/website/index.php?Show=CustomerWishlistLogin"
+                    href="https://www.trouwringenvoordeel.nl/website/index.php?Show=CustomerWishlistLogin&utm_source=iuvox_landingspagina&utm_content=header"
                 >
                     <Heart />
                 </a>
-                <a href="https://www.trouwringenvoordeel.nl/website/index.php?Show=WebShopBasket">
+                <a href="https://www.trouwringenvoordeel.nl/website/index.php?Show=WebShopBasket&utm_source=iuvox_landingspagina&utm_content=header">
                     <ShoppingCart />
                 </a>
             </div>
