@@ -1,7 +1,7 @@
 <template>
     <div class="py-20 text-center">
-        <h1 class="font-bold text-4xl text-primary">{{query.title}}</h1>
-        <p v-html="query.content" class="text-xl mt-2"></p>
+        <h1 v-if="query.title" class="font-bold text-4xl text-primary">{{query.title}}</h1>
+        <p v-if="query.content" v-html="query.content" class="text-xl mt-2"></p>
         <a href="https://trouwringenvoordeel.nl/?utm_source=iuvox_landingspagina&utm_campaign=afspraakbevestiging&utm_content=optie_gekozen">
             <BaseButton class="md:w-1/3 mt-4">Bekijk onze collectie</BaseButton>
         </a>
@@ -25,8 +25,12 @@ const query = computed(() => {
 })
 
 const filter = (string) => {
-    return string
-        .replace(/<script>.*?<\/script>/gmi, '')
+    try {
+        return string
+            .replace(/<script>.*?<\/script>/gmi, '')
+    } catch (err) {
+        return null
+    }
 }
 
 </script>
