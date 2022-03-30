@@ -13,7 +13,7 @@ onMounted(() => {
 useHead({
     meta: [
         {
-            name: 'facebook-domain-verfication',
+            name: 'facebook-domain-verification',
             content: 'cspt0ayns6le0i415mn6dm9f05x8di'
         }
     ]
