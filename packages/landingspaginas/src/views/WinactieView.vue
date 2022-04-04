@@ -1,17 +1,9 @@
 <template>
     <div>
-        <div class="hidden relative h-44 md:flex justify-center items-center">
-            <h2 class="text-white font-semibold text-2xl bg-primary p-1">Win €250 shoptegoed</h2>
-            <img
-                src="https://trouwringenvoordeel.merces.me/assets/images/Bannervrouwmetman.png"
-                class="absolute pointer-events-none object-cover w-full h-full inset-0 -z-10"
-                alt
-            />
-        </div>
         <div class="md:flex md:m-auto md:py-14 md:w-2/3 md:items-center">
             <div class="md:w-1/2">
                 <img
-                    src="https://www.trouwringenvoordeel.nl/Files/10/258000/258892/FileBrowser/categoriebanners/trouwringen-kopen.jpg"
+                    src="/winactie-banner.jpg"
                     class="w-full h-[300px] object-cover"
                     alt
                 />
@@ -27,6 +19,7 @@
                         :label="input.label"
                         :checked="input.checked"
                         :fields="input.fields"
+                        :required="input.required"
                     />
 
                     <BaseButton class="mt-3">Ja, ik wil shoptegoed winnen!</BaseButton>
@@ -41,6 +34,7 @@ import BaseInput from "../components/BaseInput.vue"
 import BaseButton from "../components/BaseButton.vue"
 import getSplitTest from "../plugins/splittesting.js"
 import axios from 'axios'
+import { fbTrack } from "../plugins/facebook"
 
 export default {
     data() {
@@ -50,17 +44,27 @@ export default {
                     id: "name",
                     type: "text",
                     autocomplete: "name",
+                    required: true,
                     label: "Je naam",
                 },
                 {
                     id: "email",
                     type: "email",
+                    required: true,
                     autocomplete: "email",
                     label: "E-mailadres"
                 },
                 {
+                    id: "phone",
+                    type: "phone",
+                    required: true,
+                    autocomplete: "phone",
+                    label: "Telefoonnummer"
+                },
+                {
                     id: "woonplaats",
                     type: "text",
+                    required: true,
                     autocomplete: "address-level2",
                     label: "Je Woonplaats",
                     fieldId: 3
@@ -94,6 +98,7 @@ export default {
                     id: "terms",
                     type: "checkbox",
                     checked: true,
+                    required: true,
                     label: "Ja, ik ga akkoord met de algemene voorwaarden"
                 },
             ]
@@ -117,6 +122,7 @@ export default {
 
             axios.post('https://trouwringen.merces.me/api/activecampaign/createcontact', contact).then(res => {
                 console.log(res.data)
+                fbTrack('track', 'Form Success V2')
                 this.$router.push({
                     name: 'Winactie Succes'
                 })

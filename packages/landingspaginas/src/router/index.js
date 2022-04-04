@@ -17,7 +17,10 @@ const routes = [{
     {
         path: '/shoptegoedwinnen',
         name: 'Win Shoptegoed',
-        component: components.winactie
+        component: components.winactie,
+        meta: {
+            title: 'Win €250 shoptegoed!'
+        }
     },
     {
         path: '/shoptegoedwinnen-succes',

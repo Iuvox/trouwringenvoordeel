@@ -13,4 +13,12 @@ const fbInit = () => {
 
 }
 
-export { fbInit }
+const fbTrack = (event, value) => {
+    try {
+        fbq(event, value)
+    } catch (err) {
+        console.debug(err)
+    }
+}
+
+export { fbInit, fbTrack }

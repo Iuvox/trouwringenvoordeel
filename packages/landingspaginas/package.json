@@ -13,7 +13,7 @@
     "serve": "yarn cross-env NODE_ENV=production node server",
     "debug": "yarn node --inspect-brk server",
     "prerender-dev": "yarn node prerender-dev.js",
-    "start": "yarn run build && yarn run generate && yarn node server"
+    "start": "yarn run build && yarn run generate && yarn node server/static.js"
   },
   "dependencies": {
     "@vueuse/core": "^8.0.1",

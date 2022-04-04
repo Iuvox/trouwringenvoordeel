@@ -7,6 +7,7 @@
             :autocomplete="autocomplete"
             :name="id"
             :checked="checked"
+            :required="required"
             class="border-[thin] px-2 py-1 rounded-sm"
             :class="classes"
             :placeholder="placeholder"
@@ -56,6 +57,10 @@ const props = defineProps({
     checked: {
         type: Boolean,
         default: false
+    },
+    required: {
+        type: Boolean,
+        default: false,
     },
     fields: {
         type: Array,
