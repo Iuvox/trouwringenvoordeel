@@ -1,0 +1,11 @@
+{
+  "name": "statichtml",
+  "packageManager": "yarn@3.2.0",
+  "scripts": {
+    "dev": "yarn nodemon server.js"
+  },
+  "devDependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
+}

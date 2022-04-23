@@ -11,9 +11,8 @@ module.exports.list = (req, res) => {
             message.error = 'NOT_FOUND'
         }
         const order = await ccv.findOrder(result[0].order_number).catch(err => { console.log(err.data) })
-        
-        ccv.usedCodes(message.code).then(usedOrders => {
-            
+
+        ccv.usedCodes(message.code).then(usedOrders => { 
             res.send({
                 ...message,
                 ...result[0],

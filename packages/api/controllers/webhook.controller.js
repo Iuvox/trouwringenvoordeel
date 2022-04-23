@@ -12,7 +12,10 @@ module.exports.handleOrder = async(req, res) => {
         })
     })
     logger.info(`New order: ${JSON.stringify(req.body)}`)
-    const order = await ccvapi.get(`/orders/${req.body.id}`).catch(err => { logger.warn(err); res.status(502).end()})
+    const order = await ccvapi.get(`/orders/${req.body.id}`).catch(err => { 
+        logger.warn(err);
+        res.status(502).end() 
+    })
 
     const codeObj = {
         code: code.code
@@ -24,10 +27,23 @@ module.exports.handleOrder = async(req, res) => {
         return false
     }
 
-    if(order.data.customer.reference !== '') {
+    if (order.data.customer.reference !== '') {
         logger.info(`customer used reference: ${JSON.stringify(order.data.customer.reference)}`)
         codeObj.usedReference = order.data.customer.reference
-        referral.usedReferral({order_number: order.data.id, code: code.code}).catch(err => logger.warn(`insert of used referral didn't work. Probably webhook order is multiple times emitted: ${JSON.stringify(err)}`))
+
+        referral.checkCode(order.data.customer.reference).then(res => {
+            if (res.length > 0) {
+                logger.info('code is valid')
+                referral.usedReferral({
+                    order_number: order.data.id,
+                    code: code.code
+                }).catch(err => logger.warn(`insert of used referral didn't work. Probably webhook order is multiple times emitted: ${JSON.stringify(err)}`))
+            } else {
+                logger.info('code is not valid. Probably used as other reference')
+            }
+        }).catch(err => {
+            logger.warn(err)
+        })
     }
 
 
@@ -54,7 +70,7 @@ module.exports.checkreferral = (req, res) => {
 
     referral.checkCode(code)
         .then(code => {
-            if(code.length > 0) {
+            if (code.length > 0) {
                 res.send({
                     ...code[0]
                 })
@@ -62,7 +78,7 @@ module.exports.checkreferral = (req, res) => {
                 throw {
                     code: 'NOT_EXISTS',
                     message: 'Geen referral code bekend'
-                }   
+                }
             }
         })
         .catch(err => {
@@ -70,7 +86,7 @@ module.exports.checkreferral = (req, res) => {
         })
 }
 
-module.exports.getActiveWebhooksCCV = async (req, res) => {
+module.exports.getActiveWebhooksCCV = async(req, res) => {
     const webhooks = await ccvapi.get('/webhooks?size=150')
     logger.debug('Got all webhooks')
     res.send(webhooks.data)

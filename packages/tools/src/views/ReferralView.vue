@@ -29,7 +29,7 @@
             </div>
             <div>
                 <h2 class="text-3xl font-bold mt-6">Gebruikt op de volgende orders:</h2>
-                <div v-if="order.Usedorders">
+                <div v-if="usedOrders">
                     <div v-for="order in usedOrders" class="mt-3">
                         <p>Naam: {{ order.customer.billingaddress.full_name }}</p>
                         <p>Telefoon: {{ order.customer.billingaddress.telephone }}</p>
