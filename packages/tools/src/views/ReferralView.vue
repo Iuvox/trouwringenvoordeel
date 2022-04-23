@@ -31,10 +31,7 @@
                 <h2 class="text-3xl font-bold mt-6">Gebruikt op de volgende orders:</h2>
                 <div v-if="usedOrders.length > 0">
                     <div v-for="order in usedOrders" class="mt-3">
-                        <p>Naam: {{ order.customer.billingaddress.full_name }}</p>
-                        <p>Telefoon: {{ order.customer.billingaddress.telephone }}</p>
-                        <p>Email: {{ order.customer.email }}</p>
-                        <p>Order Number: {{ order.ordernumber_full }}</p>
+                        <p v-for="details in getDetails(order)"> {{details.title}}: {{details.value}} </p>
                         <a
                             :href="`https://www.trouwringenvoordeel.nl/onderhoud/AdminItems/MyOrders/ShowOrder.php?AdminItem=251&Order=${order.id}`"
                             target="_blank"
@@ -68,6 +65,16 @@ export default {
     mounted() {
     },
     methods: {
+        getDetails(order) {
+            const details = []
+            if('customer' in order && 'billingaddress' in order.customer) {
+                if ('full_name' in order.customer.billingaddress) details.push({title: 'Naam', value: order.customer.billingaddress.full_name })
+                if ('telephone' in order.customer.billingaddress) details.push({title: 'Telefoon', value: order.customer.billingaddress.telephone })
+                if ('email' in order.customer) details.push({title: 'Email', value: order.customer.email})
+            }
+            details.push({title: 'Order Number', value: order.ordernumber_full})
+            return details
+        },
         getReferralcode(code) {
             api.get(`/referral/${code}`, {
                 headers: {
